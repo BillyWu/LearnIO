@@ -1,39 +1,20 @@
-﻿using System;
-using System.Net.Sockets;
-using System.Text;
-
-namespace SocketAsyncServer
+﻿namespace SocketAsyncServer
 {
-    class AcceptOpUserToken
+    internal class AcceptOpUserToken
     {
         //The only reason to use this UserToken in our app is to give it an identifier,
         //so that you can see it in the program flow. Otherwise, you would not need it.
+        internal int socketHandleNumber; //for testing only
 
-        
-        private Int32 id; //for testing only
-        internal Int32 socketHandleNumber; //for testing only
-
-        public AcceptOpUserToken(Int32 identifier)
+        public AcceptOpUserToken(int identifier)
         {
-            id = identifier;
-            
-
+            TokenId = identifier;
             //if (Program.watchProgramFlow == true)   //for testing
             //{
             //    Program.testWriter.WriteLine("AcceptOpUserToken constructor, idOfThisObject " + id);
             //}
         }
 
-        public Int32 TokenId
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-            }
-        }
+        public int TokenId { get; set; }
     }
 }
