@@ -4,15 +4,6 @@ namespace SocketAsyncServer
 {
     internal class SocketListenerSettings
     {
-        // the maximum number of connections the sample is designed to handle simultaneously 
-
-
-        // this variable allows us to create some extra SAEA objects for the pool,
-        // if we wish.
-
-        // See comments in buffer manager.
-
-
         public SocketListenerSettings(int maxConnections, int excessSaeaObjectsInPool, int backlog,
             int maxSimultaneousAcceptOps, int receivePrefixLength, int receiveBufferSize, int sendPrefixLength,
             int opsToPreAlloc, IPEndPoint theLocalEndPoint)
@@ -27,10 +18,15 @@ namespace SocketAsyncServer
             OpsToPreAllocate = opsToPreAlloc;
             LocalEndPoint = theLocalEndPoint;
         }
-        // max # of pending connections the listener can hold in queue
+
+        // the maximum number of connections the sample is designed to handle simultaneously 
         public int MaxConnections { get; }
+
+        // this variable allows us to create some extra SAEA objects for the pool,
+        // if we wish.
         public int NumberOfSaeaForRecSend { get; }
 
+        // max # of pending connections the listener can hold in queue
         public int Backlog { get; }
 
         // tells us how many objects to put in pool for accept operations
@@ -45,7 +41,9 @@ namespace SocketAsyncServer
         // length of message prefix for send ops
         public int SendPrefixLength { get; }
 
+        // See comments in buffer manager.
         public int OpsToPreAllocate { get; }
+
         // Endpoint for the listener.
         public IPEndPoint LocalEndPoint { get; }
     }
