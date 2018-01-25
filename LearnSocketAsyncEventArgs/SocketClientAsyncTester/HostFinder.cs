@@ -36,7 +36,7 @@ namespace SocketClientAsyncTester
             {
                 hostEndPoint = GetServerEndpointUsingIpAddress(host, portOnHost);
             }
-            
+
             TestConnection(hostEndPoint);
             this.host = host;
             this.portOnHost = portOnHost;
@@ -71,6 +71,7 @@ namespace SocketClientAsyncTester
 
         public bool TestConnection(IPEndPoint theHostEndPoint)
         {
+            return true;
             bool connectedSuccessfully = false;
             IPEndPoint hostEndPoint = theHostEndPoint;
             Console.WriteLine("Testing connection to server.");

@@ -197,7 +197,7 @@ namespace SocketClientAsyncTester
                             Console.WriteLine("Changed watchProgramFlow to false.");
                             Program.testWriter.WriteLine("\r\nStopped logging program flow.\r\n");
                         }
-                        else
+                        else 
                         {
                             Console.WriteLine("Program flow was already NOT being logged.");
                         }                        
